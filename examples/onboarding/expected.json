@@ -1,0 +1,49 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "decisions": [
+    {
+      "status": "simulated_success"
+    },
+    {
+      "status": "simulated_failure"
+    },
+    {
+      "status": "simulated_success"
+    },
+    {
+      "status": "simulated_success"
+    },
+    {
+      "status": "duplicate"
+    }
+  ],
+  "state": {
+    "tenants": [
+      {
+        "id": "tenant-a",
+        "completedSteps": [
+          "create_workspace",
+          "configure_routing",
+          "launch"
+        ],
+        "receipts": [
+          {
+            "eventId": "event-1",
+            "step": "create_workspace",
+            "status": "success"
+          },
+          {
+            "eventId": "event-2",
+            "step": "configure_routing",
+            "status": "success"
+          },
+          {
+            "eventId": "event-3",
+            "step": "launch",
+            "status": "success"
+          }
+        ]
+      }
+    ]
+  }
+}

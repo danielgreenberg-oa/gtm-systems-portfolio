@@ -1,0 +1,48 @@
+{
+  "tenants": [
+    {
+      "id": "tenant-a",
+      "prerequisites": [
+        "intake_received"
+      ],
+      "approvals": [
+        "provisioning_approved",
+        "launch_approved"
+      ],
+      "completedSteps": [],
+      "receipts": []
+    }
+  ],
+  "events": [
+    {
+      "tenantId": "tenant-a",
+      "id": "event-1",
+      "step": "create_workspace",
+      "outcome": "success"
+    },
+    {
+      "tenantId": "tenant-a",
+      "id": "event-2",
+      "step": "configure_routing",
+      "outcome": "failure"
+    },
+    {
+      "tenantId": "tenant-a",
+      "id": "event-2",
+      "step": "configure_routing",
+      "outcome": "success"
+    },
+    {
+      "tenantId": "tenant-a",
+      "id": "event-3",
+      "step": "launch",
+      "outcome": "success"
+    },
+    {
+      "tenantId": "tenant-a",
+      "id": "event-1",
+      "step": "create_workspace",
+      "outcome": "success"
+    }
+  ]
+}

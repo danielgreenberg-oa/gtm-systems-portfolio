@@ -1,0 +1,23 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "status": "packaged",
+  "reason": "both_gates_passed",
+  "attempts": [
+    {
+      "attempt": 1,
+      "accepted": false,
+      "issues": [
+        "fixture_evaluator_requested_revision"
+      ]
+    },
+    {
+      "attempt": 2,
+      "accepted": true,
+      "issues": []
+    }
+  ],
+  "package": {
+    "opener": "The inventory plan targets 12 hours.",
+    "claimsAreSynthetic": true
+  }
+}

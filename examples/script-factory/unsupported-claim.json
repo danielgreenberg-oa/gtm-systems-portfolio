@@ -1,0 +1,20 @@
+{
+  "offer": {
+    "id": "synthetic-offer",
+    "approved": true,
+    "segment": "synthetic-retail",
+    "claims": [
+      "12 hours"
+    ]
+  },
+  "segment": "synthetic-retail",
+  "maxAttempts": 2,
+  "candidates": [
+    {
+      "opener": "Save 99 hours.",
+      "cta": "Send the plan?",
+      "verdict": "pass",
+      "feedback": ""
+    }
+  ]
+}

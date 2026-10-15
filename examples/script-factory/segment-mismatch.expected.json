@@ -1,0 +1,7 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "status": "held",
+  "reason": "segment_mismatch",
+  "attempts": [],
+  "package": null
+}

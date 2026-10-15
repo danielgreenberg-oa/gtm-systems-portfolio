@@ -1,0 +1,32 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "decisions": [
+    {
+      "status": "failed"
+    },
+    {
+      "status": "exhausted"
+    },
+    {
+      "status": "exhausted",
+      "action": null
+    }
+  ],
+  "state": {
+    "records": [
+      {
+        "tenantId": "tenant-a",
+        "contactId": "contact-1",
+        "stage": "new",
+        "version": 1,
+        "owner": "automation"
+      }
+    ],
+    "receipts": [
+      {
+        "status": "exhausted",
+        "attempts": 2
+      }
+    ]
+  }
+}

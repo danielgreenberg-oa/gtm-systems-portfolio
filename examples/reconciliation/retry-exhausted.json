@@ -1,0 +1,44 @@
+{
+  "maxAttempts": 2,
+  "state": {
+    "records": [
+      {
+        "tenantId": "tenant-a",
+        "contactId": "contact-1",
+        "stage": "new",
+        "version": 1,
+        "owner": "automation"
+      }
+    ],
+    "receipts": []
+  },
+  "events": [
+    {
+      "tenantId": "tenant-a",
+      "id": "event-1",
+      "contactId": "contact-1",
+      "stage": "engaged",
+      "version": 2,
+      "source": "webhook",
+      "outcome": "failure"
+    },
+    {
+      "tenantId": "tenant-a",
+      "id": "event-1",
+      "contactId": "contact-1",
+      "stage": "engaged",
+      "version": 2,
+      "source": "webhook",
+      "outcome": "failure"
+    },
+    {
+      "tenantId": "tenant-a",
+      "id": "event-1",
+      "contactId": "contact-1",
+      "stage": "engaged",
+      "version": 2,
+      "source": "webhook",
+      "outcome": "success"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "status": "exhausted",
+  "reason": "attempt_limit_reached",
+  "attempts": [
+    {
+      "accepted": false
+    },
+    {
+      "accepted": false
+    }
+  ],
+  "package": null
+}

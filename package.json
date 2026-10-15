@@ -1,0 +1,16 @@
+{
+  "name": "gtm-systems-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Synthetic offline decision demos. No live provisioning or CRM writes.",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "demo:script-factory": "node --experimental-strip-types src/cli.ts script-factory",
+    "demo:onboarding": "node --experimental-strip-types src/cli.ts onboarding",
+    "demo:reconciliation": "node --experimental-strip-types src/cli.ts reconciliation",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": { "@types/node": "^22.0.0", "typescript": "^5.9.0" }
+}
