@@ -1,0 +1,24 @@
+{
+  "classification": "synthetic demonstration",
+  "source": "synthetic-call-01",
+  "statements": [
+    {
+      "text": "The finance team prepares reports manually.",
+      "category": "business_fact",
+      "approval": "not_applicable",
+      "source_ref": "synthetic-call-01:statement-1"
+    },
+    {
+      "text": "We could offer a guaranteed turnaround.",
+      "category": "proposal",
+      "approval": "unapproved",
+      "source_ref": "synthetic-call-01:statement-2"
+    },
+    {
+      "text": "You may offer a reporting plan targeting 20% less manual work.",
+      "category": "approved_commitment",
+      "approval": "approved_in_synthetic_fixture",
+      "source_ref": "synthetic-call-01:statement-3"
+    }
+  ]
+}

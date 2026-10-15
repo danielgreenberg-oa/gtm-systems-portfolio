@@ -1,0 +1,26 @@
+{
+  "classification": "synthetic worked example",
+  "policy_note": "Review hold is proposed here; source helper can fall back with coverage_gap.",
+  "approved_offer": {
+    "id": "offer-demo",
+    "committed_segments": [
+      "SOFTWARE"
+    ]
+  },
+  "accounts": [
+    {
+      "company": "Example Software",
+      "domain": "software.example",
+      "segment": "SOFTWARE",
+      "offer_match": true,
+      "review": "eligible for next check"
+    },
+    {
+      "company": "Example Freight",
+      "domain": "freight.example",
+      "segment": "LOGISTICS",
+      "offer_match": false,
+      "review": "hold coverage gap"
+    }
+  ]
+}

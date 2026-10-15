@@ -1,0 +1,1073 @@
+[
+  {
+    "slug": "overview",
+    "title": "GTM systems / one operating model",
+    "subtitle": "Daniel Greenberg  \u2022  Business capabilities, shared state and human control",
+    "nodes": [
+      {
+        "id": "onboarding",
+        "kind": "human",
+        "text": "Onboarding\nIntake + approvals",
+        "column": 0
+      },
+      {
+        "id": "research",
+        "kind": "process",
+        "text": "Lead research\nFit + offer routing",
+        "column": 1
+      },
+      {
+        "id": "factory",
+        "kind": "process",
+        "text": "Script Factory\nApproved copy",
+        "column": 2
+      },
+      {
+        "id": "campaign",
+        "kind": "process",
+        "text": "Campaign setup\nSenders + sequences",
+        "column": 3
+      },
+      {
+        "id": "context",
+        "kind": "decision",
+        "text": "Context OS\nReply + next action",
+        "column": 4
+      },
+      {
+        "id": "calls",
+        "kind": "process",
+        "text": "Call intelligence\nEvidence + offers",
+        "column": 0,
+        "row": 1
+      },
+      {
+        "id": "utilities",
+        "kind": "process",
+        "text": "Supporting utilities\nReporting + finance",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "state",
+        "kind": "store",
+        "text": "Shared state\nIdentity + receipts",
+        "column": 2,
+        "row": 1
+      },
+      {
+        "id": "reconcile",
+        "kind": "recovery",
+        "text": "Reconciliation\nMissed + stale work",
+        "column": 3,
+        "row": 1
+      },
+      {
+        "id": "crm",
+        "kind": "output",
+        "text": "CRM integration\nContact + follow-up",
+        "column": 4,
+        "row": 1
+      }
+    ],
+    "edges": [
+      {
+        "from": "onboarding",
+        "to": "research"
+      },
+      {
+        "from": "research",
+        "to": "factory"
+      },
+      {
+        "from": "factory",
+        "to": "campaign"
+      },
+      {
+        "from": "campaign",
+        "to": "context"
+      },
+      {
+        "from": "calls",
+        "to": "factory",
+        "lane": 470,
+        "label": "approved context",
+        "label_at": [
+          240,
+          440
+        ]
+      },
+      {
+        "from": "factory",
+        "to": "state",
+        "lane": 540,
+        "dashed": true
+      },
+      {
+        "from": "campaign",
+        "to": "reconcile",
+        "lane": 540,
+        "dashed": true
+      },
+      {
+        "from": "context",
+        "to": "crm",
+        "lane": 540
+      },
+      {
+        "from": "reconcile",
+        "to": "crm",
+        "dashed": true
+      }
+    ],
+    "example": "READING PATH  Business problem \u2192 chapter \u2192 selected code \u2192 synthetic example \u2192 dated evidence",
+    "scope": "Source observations: 2026-10-15. Capability map, not a claim of current deployment or a literal execution graph."
+  },
+  {
+    "slug": "script-factory",
+    "title": "01 / Script Factory",
+    "subtitle": "Approved context becomes reviewable copy through separate deterministic and evaluator gates.",
+    "nodes": [
+      {
+        "id": "brief",
+        "kind": "trigger",
+        "text": "Approved brief\nOffer + segment",
+        "column": 0
+      },
+      {
+        "id": "generate",
+        "kind": "process",
+        "text": "Assemble prompt\nCandidate fixture",
+        "column": 1
+      },
+      {
+        "id": "qc",
+        "kind": "decision",
+        "text": "Quality guards\nClaims + format",
+        "column": 2
+      },
+      {
+        "id": "evaluate",
+        "kind": "decision",
+        "text": "Evaluator fixture\nPass or revise",
+        "column": 3
+      },
+      {
+        "id": "package",
+        "kind": "output",
+        "text": "Package candidate\nTrace + copy",
+        "column": 4
+      },
+      {
+        "id": "context",
+        "kind": "store",
+        "text": "Approved context\nClaims + exclusions",
+        "column": 0,
+        "row": 1
+      },
+      {
+        "id": "revise",
+        "kind": "recovery",
+        "text": "Bounded revision\nFeedback + counter",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "exhaust",
+        "kind": "recovery",
+        "text": "Terminal exhaustion\nPreserve reasons",
+        "column": 3,
+        "row": 1
+      },
+      {
+        "id": "review",
+        "kind": "human",
+        "text": "Release approval\nSeparate from writing",
+        "column": 4,
+        "row": 1
+      }
+    ],
+    "edges": [
+      {
+        "from": "brief",
+        "to": "generate"
+      },
+      {
+        "from": "generate",
+        "to": "qc"
+      },
+      {
+        "from": "qc",
+        "to": "evaluate"
+      },
+      {
+        "from": "evaluate",
+        "to": "package"
+      },
+      {
+        "from": "context",
+        "to": "brief"
+      },
+      {
+        "from": "qc",
+        "to": "revise",
+        "lane": 500,
+        "label": "failed guard",
+        "label_at": [
+          655,
+          468
+        ]
+      },
+      {
+        "from": "revise",
+        "to": "generate",
+        "points": [
+          [
+            418,
+            730
+          ],
+          [
+            395,
+            730
+          ],
+          [
+            395,
+            450
+          ],
+          [
+            580,
+            450
+          ],
+          [
+            580,
+            422
+          ]
+        ],
+        "label": "next attempt",
+        "label_at": [
+          430,
+          425
+        ]
+      },
+      {
+        "from": "package",
+        "to": "review"
+      },
+      {
+        "from": "evaluate",
+        "to": "revise",
+        "lane": 555,
+        "label": "evaluator requests revision",
+        "label_at": [
+          830,
+          525
+        ]
+      },
+      {
+        "from": "revise",
+        "to": "exhaust",
+        "label": "budget exhausted",
+        "label_at": [
+          800,
+          700
+        ]
+      }
+    ],
+    "example": "DEFAULT FIXTURE  \u201c12 hours\u201d claim \u2192 evaluator asks for a deliverable \u2192 inventory plan passes on attempt 2.",
+    "scope": "Simplified offline demo. Inspected source: 3 total generation attempts. Demo budget is fixture-configured. No model call or delivery."
+  },
+  {
+    "slug": "onboarding",
+    "title": "02 / Onboarding",
+    "subtitle": "Ready work proceeds while approvals, failed steps and completed receipts remain visible.",
+    "nodes": [
+      {
+        "id": "event",
+        "kind": "trigger",
+        "text": "Setup event\nTenant + step ID",
+        "column": 0
+      },
+      {
+        "id": "check",
+        "kind": "decision",
+        "text": "Check prerequisites\nIntake + prior steps",
+        "column": 1
+      },
+      {
+        "id": "gate",
+        "kind": "human",
+        "text": "Approval gate\nProvisioning / launch",
+        "column": 2
+      },
+      {
+        "id": "plan",
+        "kind": "process",
+        "text": "Plan one action\nSimulate outcome",
+        "column": 3
+      },
+      {
+        "id": "done",
+        "kind": "output",
+        "text": "Record receipt\nAdvance completed step",
+        "column": 4
+      },
+      {
+        "id": "state",
+        "kind": "store",
+        "text": "Task state\nCompleted + receipts",
+        "column": 0,
+        "row": 1
+      },
+      {
+        "id": "hold",
+        "kind": "recovery",
+        "text": "Blocked prerequisite\nWait for evidence",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "approval",
+        "kind": "human",
+        "text": "Await approval\nResume same step",
+        "column": 2,
+        "row": 1
+      },
+      {
+        "id": "failure",
+        "kind": "recovery",
+        "text": "Partial failure\nRetry unfinished step",
+        "column": 3,
+        "row": 1
+      },
+      {
+        "id": "duplicate",
+        "kind": "decision",
+        "text": "Duplicate event\nNo repeated effect",
+        "column": 4,
+        "row": 1
+      }
+    ],
+    "edges": [
+      {
+        "from": "event",
+        "to": "check"
+      },
+      {
+        "from": "check",
+        "to": "gate"
+      },
+      {
+        "from": "gate",
+        "to": "plan"
+      },
+      {
+        "from": "plan",
+        "to": "done"
+      },
+      {
+        "from": "state",
+        "to": "event"
+      },
+      {
+        "from": "check",
+        "to": "hold"
+      },
+      {
+        "from": "gate",
+        "to": "approval"
+      },
+      {
+        "from": "plan",
+        "to": "failure",
+        "label": "failure",
+        "label_at": [
+          1340,
+          490
+        ]
+      },
+      {
+        "from": "done",
+        "to": "duplicate"
+      }
+    ],
+    "example": "DEFAULT FIXTURE  Workspace completes \u2192 routing fails \u2192 routing resumes \u2192 launch completes \u2192 duplicate skips.",
+    "scope": "Simplified sequential demo. Production requires durable atomic claims and native receipts. Generated plans do not provision services."
+  },
+  {
+    "slug": "context-os",
+    "title": "03 / Context OS",
+    "subtitle": "The exact reply, lead identity and enabled channels determine the next decision.",
+    "nodes": [
+      {
+        "id": "event",
+        "kind": "trigger",
+        "text": "Reply / meeting\nChannel + event ID",
+        "column": 0
+      },
+      {
+        "id": "identity",
+        "kind": "process",
+        "text": "Resolve identity\nTenant + lead",
+        "column": 1
+      },
+      {
+        "id": "classify",
+        "kind": "decision",
+        "text": "Bind classification\nExact current event",
+        "column": 2
+      },
+      {
+        "id": "rule",
+        "kind": "decision",
+        "text": "Select enabled rule\nChannel + intent",
+        "column": 3
+      },
+      {
+        "id": "next",
+        "kind": "output",
+        "text": "Proposed action\nSuppress / follow up",
+        "column": 4
+      },
+      {
+        "id": "state",
+        "kind": "store",
+        "text": "Shared context\nEvents + receipts",
+        "column": 0,
+        "row": 1
+      },
+      {
+        "id": "hold",
+        "kind": "recovery",
+        "text": "Identity mismatch\nHold for inspection",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "only",
+        "kind": "output",
+        "text": "Classification only\nNo routed effect",
+        "column": 2,
+        "row": 1
+      },
+      {
+        "id": "human",
+        "kind": "human",
+        "text": "Operator policy\nChannel enablement",
+        "column": 3,
+        "row": 1
+      },
+      {
+        "id": "recovery",
+        "kind": "recovery",
+        "text": "Missed event\nReconcile + dedupe",
+        "column": 4,
+        "row": 1
+      }
+    ],
+    "edges": [
+      {
+        "from": "event",
+        "to": "identity"
+      },
+      {
+        "from": "identity",
+        "to": "classify"
+      },
+      {
+        "from": "classify",
+        "to": "rule"
+      },
+      {
+        "from": "rule",
+        "to": "next"
+      },
+      {
+        "from": "state",
+        "to": "event"
+      },
+      {
+        "from": "identity",
+        "to": "hold"
+      },
+      {
+        "from": "classify",
+        "to": "only"
+      },
+      {
+        "from": "human",
+        "to": "rule"
+      },
+      {
+        "from": "next",
+        "to": "recovery"
+      }
+    ],
+    "example": "WORKED EXAMPLE  Recovery finds an event \u2192 plan one update \u2192 acknowledge \u2192 replay produces no second action.",
+    "scope": "Source-backed concept map; runnable example uses a generic stage adapter. Rule selection alone does not suppress a channel."
+  },
+  {
+    "slug": "crm-integration",
+    "title": "04 / Create CRM Lead",
+    "subtitle": "Write the right entity in the right destination, with ownership and completion evidence.",
+    "nodes": [
+      {
+        "id": "trigger",
+        "kind": "trigger",
+        "text": "Qualified event\nSource identity",
+        "column": 0
+      },
+      {
+        "id": "normalize",
+        "kind": "process",
+        "text": "Normalize context\nBound note text",
+        "column": 1
+      },
+      {
+        "id": "owner",
+        "kind": "decision",
+        "text": "Resolve ownership\nEntity + destination",
+        "column": 2
+      },
+      {
+        "id": "contact",
+        "kind": "process",
+        "text": "Create CRM Lead\nGHL contact context",
+        "column": 3
+      },
+      {
+        "id": "followup",
+        "kind": "output",
+        "text": "Notes + follow-up\nRecord native result",
+        "column": 4
+      },
+      {
+        "id": "entities",
+        "kind": "store",
+        "text": "Entity model\nContact / company",
+        "column": 0,
+        "row": 1
+      },
+      {
+        "id": "pipeline",
+        "kind": "decision",
+        "text": "Opportunity policy\nExplicit route choice",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "conflict",
+        "kind": "human",
+        "text": "Conflicting owner\nReview hold",
+        "column": 2,
+        "row": 1
+      },
+      {
+        "id": "receipts",
+        "kind": "store",
+        "text": "Action receipts\nProposal \u2260 completion",
+        "column": 3,
+        "row": 1
+      },
+      {
+        "id": "recovery",
+        "kind": "recovery",
+        "text": "Unknown outcome\nInspect before retry",
+        "column": 4,
+        "row": 1
+      }
+    ],
+    "edges": [
+      {
+        "from": "trigger",
+        "to": "normalize"
+      },
+      {
+        "from": "normalize",
+        "to": "owner"
+      },
+      {
+        "from": "owner",
+        "to": "contact"
+      },
+      {
+        "from": "contact",
+        "to": "followup"
+      },
+      {
+        "from": "entities",
+        "to": "trigger"
+      },
+      {
+        "from": "pipeline",
+        "to": "normalize"
+      },
+      {
+        "from": "owner",
+        "to": "conflict"
+      },
+      {
+        "from": "contact",
+        "to": "receipts"
+      },
+      {
+        "from": "followup",
+        "to": "recovery"
+      }
+    ],
+    "example": "SOURCE DISTINCTION  The inspected lender-reply route creates contact context and tasks, with NO borrower opportunity.",
+    "scope": "Text helper is adapted source. Field-ownership and stage-sync examples are portfolio illustrations, not a runnable GHL connector."
+  },
+  {
+    "slug": "reconciliation",
+    "title": "05 / Reconciliation and reliability",
+    "subtitle": "Recover missed work without treating an uncertain outcome as permission to repeat it.",
+    "nodes": [
+      {
+        "id": "scan",
+        "kind": "trigger",
+        "text": "Recovery scan\nMissed / stale events",
+        "column": 0
+      },
+      {
+        "id": "coverage",
+        "kind": "decision",
+        "text": "Coverage check\nComplete evidence?",
+        "column": 1
+      },
+      {
+        "id": "identity",
+        "kind": "decision",
+        "text": "Identity + version\nOwner + duplicate",
+        "column": 2
+      },
+      {
+        "id": "plan",
+        "kind": "process",
+        "text": "Reserve action\nPending attempt",
+        "column": 3
+      },
+      {
+        "id": "ack",
+        "kind": "output",
+        "text": "Exact acknowledgment\nReceipt + state",
+        "column": 4
+      },
+      {
+        "id": "history",
+        "kind": "store",
+        "text": "Event/action ledger\nStable identities",
+        "column": 0,
+        "row": 1
+      },
+      {
+        "id": "incomplete",
+        "kind": "recovery",
+        "text": "Incomplete scan\nReport unknown",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "hold",
+        "kind": "human",
+        "text": "Conflict or pending\nInspect + resolve",
+        "column": 2,
+        "row": 1
+      },
+      {
+        "id": "retry",
+        "kind": "recovery",
+        "text": "Known failure\nBounded retry",
+        "column": 3,
+        "row": 1
+      },
+      {
+        "id": "terminal",
+        "kind": "recovery",
+        "text": "Exhausted budget\nTerminal reason",
+        "column": 4,
+        "row": 1
+      }
+    ],
+    "edges": [
+      {
+        "from": "scan",
+        "to": "coverage"
+      },
+      {
+        "from": "coverage",
+        "to": "identity"
+      },
+      {
+        "from": "identity",
+        "to": "plan"
+      },
+      {
+        "from": "plan",
+        "to": "ack"
+      },
+      {
+        "from": "history",
+        "to": "scan"
+      },
+      {
+        "from": "coverage",
+        "to": "incomplete"
+      },
+      {
+        "from": "identity",
+        "to": "hold"
+      },
+      {
+        "from": "plan",
+        "to": "retry"
+      },
+      {
+        "from": "ack",
+        "to": "terminal",
+        "label": "failure at limit",
+        "label_at": [
+          1710,
+          490
+        ]
+      }
+    ],
+    "example": "DEFAULT FIXTURE  Missed version-2 event changes new \u2192 engaged; the later webhook duplicate proposes no action.",
+    "scope": "Demo is sequential and in memory. SQL claims are a proposed durable pattern. An unknown external outcome requires reconciliation."
+  },
+  {
+    "slug": "lead-research",
+    "title": "06 / Lead research and qualification",
+    "subtitle": "Separate account fit, approved-offer coverage and campaign allocation.",
+    "nodes": [
+      {
+        "id": "icp",
+        "kind": "trigger",
+        "text": "ICP definition\nRole + market",
+        "column": 0
+      },
+      {
+        "id": "enrich",
+        "kind": "process",
+        "text": "Enrich account\nEvidence + attributes",
+        "column": 1
+      },
+      {
+        "id": "score",
+        "kind": "decision",
+        "text": "Fit classification\nTitle + industry",
+        "column": 2
+      },
+      {
+        "id": "offer",
+        "kind": "decision",
+        "text": "Offer eligibility\nCommitted segments",
+        "column": 3
+      },
+      {
+        "id": "handoff",
+        "kind": "output",
+        "text": "Stable allocation\nCampaign handoff",
+        "column": 4
+      },
+      {
+        "id": "research",
+        "kind": "store",
+        "text": "Research evidence\nSource + freshness",
+        "column": 0,
+        "row": 1
+      },
+      {
+        "id": "review",
+        "kind": "human",
+        "text": "Review uncertainty\nNo invented facts",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "approved",
+        "kind": "store",
+        "text": "Approved offers\nSegment commitments",
+        "column": 2,
+        "row": 1
+      },
+      {
+        "id": "gap",
+        "kind": "recovery",
+        "text": "Coverage gap\nSource can fall back",
+        "column": 3,
+        "row": 1
+      },
+      {
+        "id": "policy",
+        "kind": "human",
+        "text": "Proposed gap hold\nPortfolio worksheet",
+        "column": 4,
+        "row": 1
+      }
+    ],
+    "edges": [
+      {
+        "from": "icp",
+        "to": "enrich"
+      },
+      {
+        "from": "enrich",
+        "to": "score"
+      },
+      {
+        "from": "score",
+        "to": "offer"
+      },
+      {
+        "from": "offer",
+        "to": "handoff"
+      },
+      {
+        "from": "research",
+        "to": "icp"
+      },
+      {
+        "from": "review",
+        "to": "enrich"
+      },
+      {
+        "from": "approved",
+        "to": "score"
+      },
+      {
+        "from": "offer",
+        "to": "gap"
+      },
+      {
+        "from": "gap",
+        "to": "policy"
+      }
+    ],
+    "example": "WORKED EXAMPLE  Same title, different segments: one eligible account; one gap requiring an explicit policy decision.",
+    "scope": "Helper preserves permissive missing-segment behavior. The worksheet hold is proposed policy, not enforced production parity."
+  },
+  {
+    "slug": "campaign-infrastructure",
+    "title": "07 / Campaign infrastructure",
+    "subtitle": "Sender readiness, sequence construction and activation are separate decisions.",
+    "nodes": [
+      {
+        "id": "brief",
+        "kind": "trigger",
+        "text": "Approved offer\nPrimary + B copy",
+        "column": 0
+      },
+      {
+        "id": "infra",
+        "kind": "process",
+        "text": "Domains + inboxes\nProvisioning path",
+        "column": 1
+      },
+      {
+        "id": "capacity",
+        "kind": "decision",
+        "text": "Warmup + capacity\nHealth observations",
+        "column": 2
+      },
+      {
+        "id": "assemble",
+        "kind": "process",
+        "text": "Assemble sequence\nSteps + variants",
+        "column": 3
+      },
+      {
+        "id": "ready",
+        "kind": "output",
+        "text": "Campaign plan\nReady for approval",
+        "column": 4
+      },
+      {
+        "id": "config",
+        "kind": "store",
+        "text": "Sender configuration\nProvider semantics",
+        "column": 0,
+        "row": 1
+      },
+      {
+        "id": "human",
+        "kind": "human",
+        "text": "Purchase / setup\nExplicit approval",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "health",
+        "kind": "recovery",
+        "text": "Health issue\nHold + inspect",
+        "column": 2,
+        "row": 1
+      },
+      {
+        "id": "steps",
+        "kind": "store",
+        "text": "Sequence output\n2 steps + 1 variant",
+        "column": 3,
+        "row": 1
+      },
+      {
+        "id": "launch",
+        "kind": "human",
+        "text": "Activation gate\nSeparate approval",
+        "column": 4,
+        "row": 1
+      }
+    ],
+    "edges": [
+      {
+        "from": "brief",
+        "to": "infra"
+      },
+      {
+        "from": "infra",
+        "to": "capacity"
+      },
+      {
+        "from": "capacity",
+        "to": "assemble"
+      },
+      {
+        "from": "assemble",
+        "to": "ready"
+      },
+      {
+        "from": "config",
+        "to": "brief"
+      },
+      {
+        "from": "human",
+        "to": "infra"
+      },
+      {
+        "from": "capacity",
+        "to": "health"
+      },
+      {
+        "from": "assemble",
+        "to": "steps"
+      },
+      {
+        "from": "ready",
+        "to": "launch"
+      }
+    ],
+    "example": "WORKED EXAMPLE  The Python excerpt prints three records: two cadence steps and one step-one B variant.",
+    "scope": "Sequence builder only; no buying, provisioning or sending. The inspected 14-day setting is historical configuration, not advice."
+  },
+  {
+    "slug": "call-intelligence",
+    "title": "08 / Call intelligence and knowledge",
+    "subtitle": "Keep source evidence, suggested ideas and approved commitments distinct.",
+    "nodes": [
+      {
+        "id": "call",
+        "kind": "trigger",
+        "text": "Call transcript\nSource reference",
+        "column": 0
+      },
+      {
+        "id": "extract",
+        "kind": "process",
+        "text": "Extract structured\nFacts + objections",
+        "column": 1
+      },
+      {
+        "id": "approve",
+        "kind": "human",
+        "text": "Approval boundary\nIdea or commitment?",
+        "column": 2
+      },
+      {
+        "id": "merge",
+        "kind": "process",
+        "text": "Merge context layers\nExplicit precedence",
+        "column": 3
+      },
+      {
+        "id": "reuse",
+        "kind": "output",
+        "text": "Reusable context\nCopy + next actions",
+        "column": 4
+      },
+      {
+        "id": "source",
+        "kind": "store",
+        "text": "Evidence references\nPer extracted item",
+        "column": 0,
+        "row": 1
+      },
+      {
+        "id": "uncertain",
+        "kind": "recovery",
+        "text": "Ambiguous extraction\nReview source",
+        "column": 1,
+        "row": 1
+      },
+      {
+        "id": "offers",
+        "kind": "store",
+        "text": "Approved offers\nVersioned decisions",
+        "column": 2,
+        "row": 1
+      },
+      {
+        "id": "conflict",
+        "kind": "human",
+        "text": "Contradictory facts\nDedup is insufficient",
+        "column": 3,
+        "row": 1
+      },
+      {
+        "id": "recompile",
+        "kind": "recovery",
+        "text": "Offer changes\nRecompile copy rules",
+        "column": 4,
+        "row": 1
+      }
+    ],
+    "edges": [
+      {
+        "from": "call",
+        "to": "extract"
+      },
+      {
+        "from": "extract",
+        "to": "approve"
+      },
+      {
+        "from": "approve",
+        "to": "merge"
+      },
+      {
+        "from": "merge",
+        "to": "reuse"
+      },
+      {
+        "from": "source",
+        "to": "call"
+      },
+      {
+        "from": "extract",
+        "to": "uncertain"
+      },
+      {
+        "from": "approve",
+        "to": "offers"
+      },
+      {
+        "from": "merge",
+        "to": "conflict"
+      },
+      {
+        "from": "reuse",
+        "to": "recompile"
+      }
+    ],
+    "example": "WORKED EXAMPLE  Synthetic extraction records a fact, an unapproved idea and an approved commitment with separate evidence.",
+    "scope": "Adapted merge is shallow: legacy < research < call < form. No real transcript or model accuracy claim is published."
+  }
+]

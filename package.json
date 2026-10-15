@@ -10,7 +10,9 @@
     "demo:onboarding": "node --experimental-strip-types src/cli.ts onboarding",
     "demo:reconciliation": "node --experimental-strip-types src/cli.ts reconciliation",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:artifacts": "node --experimental-strip-types --test checks/excerpts.test.mjs && python3 -m unittest discover -s checks -p 'test_*.py'",
+    "verify": "npm run typecheck && npm test && npm run test:artifacts && python3 scripts/validate_portfolio.py"
   },
   "devDependencies": { "@types/node": "^22.0.0", "typescript": "^5.9.0" }
 }

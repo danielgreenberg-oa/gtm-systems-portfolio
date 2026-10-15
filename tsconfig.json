@@ -4,5 +4,5 @@
     "strict": true, "noUncheckedIndexedAccess": true, "exactOptionalPropertyTypes": true,
     "allowImportingTsExtensions": true, "noEmit": true, "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"]
+  "include": ["src/**/*.ts", "tests/**/*.ts", "artifacts/**/*.ts"]
 }
