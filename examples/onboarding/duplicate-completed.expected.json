@@ -1,0 +1,21 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "decisions": [
+    {
+      "status": "simulated_success"
+    },
+    {
+      "status": "duplicate",
+      "action": null
+    }
+  ],
+  "state": {
+    "tenants": [
+      {
+        "completedSteps": [
+          "create_workspace"
+        ]
+      }
+    ]
+  }
+}

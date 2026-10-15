@@ -1,0 +1,18 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "decisions": [
+    {
+      "status": "held",
+      "reason": "missing_prerequisite:intake_received",
+      "action": null
+    }
+  ],
+  "state": {
+    "tenants": [
+      {
+        "completedSteps": [],
+        "receipts": []
+      }
+    ]
+  }
+}

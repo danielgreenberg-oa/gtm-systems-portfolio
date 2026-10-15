@@ -1,0 +1,9 @@
+Local verification: 2026-10-15. Synthetic fixture execution.
+
+SYNTHETIC OFFLINE DEMO: onboarding
+- Sequential offline simulation. Actions are proposed only; fixture outcomes simulate acknowledgments. Persist returned state to resume. Production needs atomic durable claims.
+- tenant-a/event-1: create_workspace -> simulated_success (fixture_acknowledgment_only).
+- tenant-a/event-2: configure_routing -> simulated_failure (failed_step_remains_retryable).
+- tenant-a/event-2: configure_routing -> simulated_success (fixture_acknowledgment_only).
+- tenant-a/event-3: launch -> simulated_success (fixture_acknowledgment_only).
+- tenant-a/event-1: create_workspace -> duplicate (completed_event_receipt).

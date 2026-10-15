@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.tmp/
+.superpowers/
+__pycache__/
+.DS_Store
+.env
+.env.*

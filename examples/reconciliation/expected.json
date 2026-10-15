@@ -1,0 +1,30 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "decisions": [
+    {
+      "status": "simulated_completed"
+    },
+    {
+      "status": "duplicate",
+      "action": null
+    }
+  ],
+  "state": {
+    "records": [
+      {
+        "tenantId": "tenant-a",
+        "contactId": "contact-1",
+        "stage": "engaged",
+        "version": 2,
+        "owner": "automation"
+      }
+    ],
+    "receipts": [
+      {
+        "eventId": "event-1",
+        "status": "completed",
+        "attempts": 1
+      }
+    ]
+  }
+}

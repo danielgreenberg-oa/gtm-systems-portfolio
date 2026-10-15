@@ -1,0 +1,66 @@
+{
+  "verified_at": "2026-10-15",
+  "scope": "source inspection and historical record; no live operating audit",
+  "items": [
+    {
+      "id": "E01",
+      "component": "Script Factory",
+      "observation": "Current source: BOM assembly, counter increment, retry condition, quality/evaluator branches and packaging.",
+      "boundary": "Source inspection; no live generation executed."
+    },
+    {
+      "id": "E02",
+      "component": "Onboarding",
+      "observation": "Workflow phase/task orchestration and Python phase selection with manual gates.",
+      "boundary": "Source inspection; no provisioning executed."
+    },
+    {
+      "id": "E03",
+      "component": "Context OS",
+      "observation": "Current suppression workflow: event binding, classification-only branch, enablement checks and rule selection.",
+      "boundary": "Source inspection; channel coverage is not a live audit."
+    },
+    {
+      "id": "E04",
+      "component": "CRM integration",
+      "observation": "Create CRM Lead targets GoHighLevel and explicitly omits borrower opportunities for lender replies.",
+      "boundary": "Source inspection; no CRM writes or health claim."
+    },
+    {
+      "id": "E05",
+      "component": "Reconciliation",
+      "observation": "Channel-state reconciler, reply recovery logic and durable claim conventions.",
+      "boundary": "Source inspection; local demo is sequential."
+    },
+    {
+      "id": "E06",
+      "component": "Lead research",
+      "observation": "Classifier grading, committed-segment helper, coverage-gap fallback and stable hash.",
+      "boundary": "Source inspection; no paid enrichment or model accuracy test."
+    },
+    {
+      "id": "E07",
+      "component": "Campaign infrastructure",
+      "observation": "Sequence builder primary steps, same-campaign native variant and sender-readiness orchestration.",
+      "boundary": "Source inspection; provider configuration is dated, not advice."
+    },
+    {
+      "id": "E08",
+      "component": "Call intelligence",
+      "observation": "Call-extracted layer, merge helpers and offer-extraction separation.",
+      "boundary": "Source inspection; fixture transcript is invented."
+    },
+    {
+      "id": "E09",
+      "component": "Supporting inventory",
+      "observation": "Workflow source inventory and March/April/June automation documentation.",
+      "boundary": "Inventory presence only; older dashboard values are not current health."
+    },
+    {
+      "id": "E10",
+      "component": "Retry-loop incident",
+      "observation": "March 7 decision record plus dated session log and the corrected technical portfolio chronology.",
+      "boundary": "Historical record; recovery was partial."
+    }
+  ]
+}

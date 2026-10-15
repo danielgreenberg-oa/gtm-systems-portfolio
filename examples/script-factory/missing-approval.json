@@ -1,0 +1,26 @@
+{
+  "offer": {
+    "id": "synthetic-offer",
+    "approved": false,
+    "segment": "synthetic-retail",
+    "claims": [
+      "12 hours"
+    ]
+  },
+  "segment": "synthetic-retail",
+  "maxAttempts": 2,
+  "candidates": [
+    {
+      "opener": "Our plan saves 12 hours.",
+      "cta": "Send the plan?",
+      "verdict": "revise",
+      "feedback": "Name the deliverable."
+    },
+    {
+      "opener": "The inventory plan targets 12 hours.",
+      "cta": "Send the plan?",
+      "verdict": "pass",
+      "feedback": ""
+    }
+  ]
+}

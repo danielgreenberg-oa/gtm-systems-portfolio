@@ -1,0 +1,7 @@
+Local verification: 2026-10-15. Synthetic fixture execution.
+
+SYNTHETIC OFFLINE DEMO: script-factory
+- Approved synthetic offer and segment verified. maxAttempts includes the initial attempt.
+- Attempt 1: fixture_evaluator_requested_revision. Feedback: Name the deliverable.
+- Attempt 2: PASS
+- Packaged passing candidate locally. No message sent.

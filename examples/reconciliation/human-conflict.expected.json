@@ -1,0 +1,22 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "decisions": [
+    {
+      "status": "held",
+      "reason": "canonical_owner_conflict",
+      "action": null
+    }
+  ],
+  "state": {
+    "records": [
+      {
+        "tenantId": "tenant-a",
+        "contactId": "contact-1",
+        "stage": "new",
+        "version": 1,
+        "owner": "human"
+      }
+    ],
+    "receipts": []
+  }
+}

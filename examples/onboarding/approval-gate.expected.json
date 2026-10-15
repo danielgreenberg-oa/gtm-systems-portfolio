@@ -1,0 +1,18 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "decisions": [
+    {
+      "status": "awaiting_approval",
+      "reason": "human_approval_required:provisioning_approved",
+      "action": null
+    }
+  ],
+  "state": {
+    "tenants": [
+      {
+        "completedSteps": [],
+        "receipts": []
+      }
+    ]
+  }
+}

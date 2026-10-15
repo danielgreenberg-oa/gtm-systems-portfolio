@@ -1,0 +1,6 @@
+Local verification: 2026-10-15. Synthetic fixture execution.
+
+SYNTHETIC OFFLINE DEMO: reconciliation
+- Sequential in-memory simulation. Stage sync is illustrative; no CRM calls occur. Production uses atomic durable claims and native receipts. This does not prove concurrent workers or distributed exactly-once. maxAttempts includes the initial attempt per stable tenant/event identity.
+- tenant-a/event-1 (recovery): simulated_completed (fixture_acknowledgment_only).
+- tenant-a/event-1 (webhook): duplicate (completed_event_receipt).

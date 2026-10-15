@@ -1,0 +1,22 @@
+{
+  "tenants": [
+    {
+      "id": "tenant-a",
+      "prerequisites": [],
+      "approvals": [
+        "provisioning_approved",
+        "launch_approved"
+      ],
+      "completedSteps": [],
+      "receipts": []
+    }
+  ],
+  "events": [
+    {
+      "tenantId": "tenant-a",
+      "id": "event-1",
+      "step": "create_workspace",
+      "outcome": "success"
+    }
+  ]
+}

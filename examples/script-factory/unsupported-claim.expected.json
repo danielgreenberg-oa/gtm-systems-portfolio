@@ -1,0 +1,15 @@
+{
+  "artifact": "synthetic-offline-demo",
+  "status": "exhausted",
+  "reason": "candidate_supply_exhausted",
+  "attempts": [
+    {
+      "accepted": false,
+      "issues": [
+        "unsupported_numeric_claim",
+        "missing_approved_claim"
+      ]
+    }
+  ],
+  "package": null
+}
